@@ -1,0 +1,39 @@
+body {
+  min-height: 100vh;
+  background: $bg;
+}
+
+.show_lg {
+  display: flex !important;
+  @include media("<=tablet") {
+    display: none !important;
+  }
+}
+
+.hide_lg {
+  display: none !important;
+  @include media("<=tablet") {
+    display: flex !important;
+  }
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  color: $colMain;
+  font-weight: 500;
+  position: relative;
+  font-size: $font-sm;
+  align-items: center;
+  padding: 0px $padHor;
+  flex-direction: column;
+  * {
+    font-family: $sans;
+    input,
+    button {
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+  }
+}
