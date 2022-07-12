@@ -1,0 +1,30 @@
+.search_bar {
+  gap: 10px;
+  width: 100%;
+  height: 75px;
+  align-items: center;
+  flex-direction: row;
+  border-right: $border;
+  border-bottom: $border;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: $font-sm;
+    padding: 18px 0px 10px;
+    &::placeholder {
+      color: $silver;
+      font-weight: 500;
+    }
+  }
+  button {
+    color: $colMain;
+    cursor: pointer;
+    font-size: $font-rg;
+    border-left: $border;
+    padding: 18px 30px 10px;
+    height: calc(100% + 1px);
+    text-transform: uppercase;
+  }
+}

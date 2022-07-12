@@ -7,7 +7,7 @@ import {
 import Home from "./Home";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://helicarrier-task.herokuapp.com/graphql",
 });
 
 const client = new ApolloClient({

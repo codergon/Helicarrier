@@ -1,0 +1,61 @@
+// BARLOADER
+.bar_wrapper {
+  height: 5px;
+  width: 90px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: inherit;
+  position: relative;
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  .loader {
+    height: 5px;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #000;
+    will-change: left, right;
+    background-clip: padding-box;
+    animation-fill-mode: forwards;
+
+    &_1 {
+      animation: longAnim 3s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+
+      @keyframes longAnim {
+        0% {
+          left: -35%;
+          right: 100%;
+        }
+        60% {
+          left: 100%;
+          right: -90%;
+        }
+        100% {
+          left: 100%;
+          right: -90%;
+        }
+      }
+    }
+
+    &_2 {
+      animation: shortAnim 2.1s 1.15s cubic-bezier(0.165, 0.84, 0.44, 1)
+        infinite;
+
+      @keyframes longAnim {
+        0% {
+          left: -200%;
+          right: 100%;
+        }
+        60% {
+          left: 107%;
+          right: -8%;
+        }
+        100% {
+          left: 107%;
+          right: -8%;
+        }
+      }
+    }
+  }
+}

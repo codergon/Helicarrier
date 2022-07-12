@@ -55,7 +55,11 @@ const Home = () => {
         <div className="grouped_items_cover">
           {data?.transactions?.length === 0 ? (
             <div className="empty_list">
-              <p>"{searchedText}" did not match any result!</p>
+              <p>
+                {!!searchedText
+                  ? `"${searchedText}" did not match any result!`
+                  : ""}
+              </p>
             </div>
           ) : (
             data?.transactions.map((group, i) => {

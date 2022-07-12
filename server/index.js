@@ -13,7 +13,10 @@ async function startApolloServer(typeDefs, resolvers) {
     resolvers,
     csrfPrevention: true,
     cors: {
-      origin: ["http://localhost:3000"],
+      origin: [
+        "http://localhost:3000",
+        "https://helicarrier-task.netlify.app/",
+      ],
     },
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
   });
@@ -22,7 +25,7 @@ async function startApolloServer(typeDefs, resolvers) {
 
   await server.start();
   server.applyMiddleware({ app });
-  app.listen({ port: 4000 }, () => {
+  app.listen({ port: process.env.PORT || 4000 }, () => {
     console.log("SERVER UP ON PORT 4000");
   });
 }

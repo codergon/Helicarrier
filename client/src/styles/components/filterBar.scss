@@ -1,0 +1,32 @@
+.filter_bar {
+  width: 100%;
+  margin: 40px 0px 20px;
+  flex-direction: column;
+
+  .filter_type,
+  .filter_options {
+    gap: 10px;
+    width: 100%;
+    height: 65px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: $border;
+    .row_item {
+      gap: 8px;
+      height: 100%;
+      cursor: pointer;
+      color: $silver;
+      font-weight: 500;
+      align-items: center;
+      flex-direction: row;
+      text-transform: capitalize;
+      i {
+        font-size: 11px;
+      }
+      &.active {
+        color: $colMain;
+      }
+    }
+  }
+}
