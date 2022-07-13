@@ -15,7 +15,7 @@ const FilterBar = ({ refetch }) => {
             onClick={() => setFilterType(item)}
           >
             <p>{item}</p>
-            <i className="ph-caret-down-fill"></i>
+            <i className="ph-caret-left-fill"></i>
           </div>
         ))}
       </div>
@@ -26,9 +26,10 @@ const FilterBar = ({ refetch }) => {
             key={index}
             className={`row_item ${item === currentOption ? "active" : ""}`}
             onClick={() => {
-              setCurrentOption(item);
+              const option = item !== currentOption ? item : "";
+              setCurrentOption(option);
               refetch({
-                filter: item,
+                filter: option,
               });
             }}
           >

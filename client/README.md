@@ -22,7 +22,24 @@ To filter transactions,
 - click on any of the filter options under any of filter types to narrow down transactions
 - **Note:** Filtering works for all the columns except the unique value column; **ID**
 
-### To interact with the server
+### Fetching data from the server
+
+To fetch transactions, a `filter` variable is paased to the query. If the `filter` variable is not provided or empty, the query returns all transactions. Below is the structure of the GraphQL query to fetch data
+
+```
+query Transactions($filter: String) {
+  transactions(filter: $filter) {
+    id
+    type
+    date
+    time
+    asset
+    status
+    address
+    platform
+  }
+}
+```
 
 Variables used to query the server
 | Parameter | Type | Description |
