@@ -1,4 +1,4 @@
-import { gql, useLazyQuery, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import React, { Fragment, useState } from "react";
 import FilterBar from "./components/FilterBar";
 import SearchBar from "./components/SearchBar";
@@ -28,7 +28,7 @@ const Home = () => {
   const RefetchList = () => {
     setSearchedText(searchInput);
     refetch({
-      filter: searchInput,
+      filter: searchInput.toLowerCase(),
     });
   };
 

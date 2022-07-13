@@ -17,5 +17,6 @@ const typeDefs = gql`
     transactions(filter: String): [[Transaction!]!]!
   }
 `;
+// THE QUERY RETURNS AN ARRAY OF TRANSACTIONS GROUPED BY SIMILAR DATE
 
 module.exports = { typeDefs };
